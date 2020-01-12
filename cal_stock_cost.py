@@ -24,9 +24,10 @@ targetCost = 6.993345454545455
 # fee=max(5,target_amount * trans_price * 0.0003)
 # if target_amount * trans_price * 0.0003>=5
 
-# 暂时假设手续费为5元
+# 暂时假设手续费为5元 因为手续费取最大 则算出两种交易量 也取最大的一个
 def cal_target_amount(trans_price, target_cost, current_cost, current_amount):
-    return (current_cost * current_amount + 5 - target_cost * current_amount) - (target_cost - trans_price)
+    return max((current_cost * current_amount + 5 - target_cost * current_amount) - (target_cost - trans_price),
+               (current_cost * current_amount - target_cost * current_amount) / (target_cost - trans_price * 1.0003))
 
 
 targetAmount = cal_target_amount(transPrice, targetCost, currentCost, currentAmount)
