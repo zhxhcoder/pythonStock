@@ -19,6 +19,7 @@ print("成交价格：" + transPrice.__str__() + " 成交量 " + transAmount.__s
 
 targetCost = 6.993345454545455
 
+
 # current_cost * current_amount + max(5,target_amount * trans_price * 0.0003) + target_amount * trans_price = target_cost*(current_amount + target_amount)
 # fee=max(5,target_amount * trans_price * 0.0003)
 # if target_amount * trans_price * 0.0003>=5
