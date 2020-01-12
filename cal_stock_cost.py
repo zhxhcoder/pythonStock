@@ -19,15 +19,15 @@ print("成交价格：" + transPrice.__str__() + " 成交量 " + transAmount.__s
 
 targetCost = 6.993345454545455
 
-
 # current_cost * current_amount + max(5,target_amount * trans_price * 0.0003) + target_amount * trans_price = target_cost*(current_amount + target_amount)
 # fee=max(5,target_amount * trans_price * 0.0003)
 # if target_amount * trans_price * 0.0003>=5
 
+# 暂时假设手续费为5元
 def cal_target_amount(trans_price, target_cost, current_cost, current_amount):
-    return 0
+    return (current_cost * current_amount + 5 - target_cost * current_amount) - (target_cost - trans_price)
 
 
 targetAmount = cal_target_amount(transPrice, targetCost, currentCost, currentAmount)
 
-print("成交价格：" + transPrice.__str__() + " 目标成本 " + transAmount.__str__() + "  " + transCost.__str__())
+print("成交价格：" + transPrice.__str__() + " 目标成本 " + targetCost.__str__() + " 目标交易量 " + targetAmount.__str__())
