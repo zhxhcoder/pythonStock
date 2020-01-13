@@ -32,8 +32,17 @@ def cal_target_amount(trans_price, target_cost, current_cost, current_amount):
     # 万3手续费
     target_amount_3fee = (current_cost * current_amount - target_cost * current_amount) / (
             target_cost - trans_price * 1.0003)
-    return max(target_amount_5fee,
-               target_amount_3fee)
+
+    print("target_amount_5fee", target_amount_5fee)
+    print("target_amount_3fee", target_amount_3fee)
+
+    print("money", trans_price * target_amount_5fee)
+    print("money", trans_price * target_amount_3fee)
+
+    if trans_price * target_amount_5fee * 0.00003 <= 5:
+        return target_amount_3fee
+    else:
+        return target_amount_5fee
 
 
 targetAmount = cal_target_amount(transPrice, targetCost, currentCost, currentAmount)
