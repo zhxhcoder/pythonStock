@@ -1,7 +1,13 @@
-a, b = 1, 1
-while a < 50:
-    print(a, end=",")
-    a, b = b, a + b
+def fib(n):
+    a, b = 1, 1
+    result = []
+    while a < n:
+        result.append(a)
+        a, b = b, a + b
+    return result
 
-else:
-    print("\n不合法", a)
+
+print(fib(10))
+
+e = input()
+print(e, "=", eval(e))
