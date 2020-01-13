@@ -1,5 +1,5 @@
-currentCost = 8.0
-currentAmount = 2500
+currentCost = 8.5
+currentAmount = 2000
 
 transPrice = 6.00
 transAmount = 1000
@@ -17,7 +17,7 @@ print("成交价格：" + transPrice.__str__() + " 成交量 " + transAmount.__s
 
 # 根据目标成本价和成交价来计算成交量
 
-targetCost = 7.43
+targetCost = 7.668333333333333
 
 
 # current_cost * current_amount + max(5,target_amount * trans_price * 0.0003) + target_amount * trans_price = target_cost*(current_amount + target_amount)
@@ -32,12 +32,6 @@ def cal_target_amount(trans_price, target_cost, current_cost, current_amount):
     # 万3手续费
     target_amount_3fee = (current_cost * current_amount - target_cost * current_amount) / (
             target_cost - trans_price * 1.0003)
-
-    print("target_amount_5fee", target_amount_5fee)
-    print("target_amount_3fee", target_amount_3fee)
-
-    print("money", trans_price * target_amount_5fee)
-    print("money", trans_price * target_amount_3fee)
 
     if trans_price * target_amount_5fee * 0.00003 <= 5:
         return target_amount_3fee
