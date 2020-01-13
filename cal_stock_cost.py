@@ -1,8 +1,8 @@
-currentCost = 8.5
-currentAmount = 2000
+currentCost = 8.648
+currentAmount = 4000
 
-transPrice = 6.00
-transAmount = 1000
+transPrice = 8.50
+transAmount = 2000
 
 
 # 根据成交价与成交量计算交易成本价
@@ -17,7 +17,7 @@ print("成交价格：" + transPrice.__str__() + " 成交量 " + transAmount.__s
 
 # 根据目标成本价和成交价来计算成交量
 
-targetCost = 7.668333333333333
+targetCost = 8.599516666666666
 
 
 # current_cost * current_amount + max(5,target_amount * trans_price * 0.0003) + target_amount * trans_price = target_cost*(current_amount + target_amount)

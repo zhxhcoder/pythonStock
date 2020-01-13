@@ -1,13 +1,13 @@
-def fib(n):
-    a, b = 1, 1
-    result = []
-    while a < n:
-        result.append(a)
-        a, b = b, a + b
-    return result
+from sys import argv
+from math import sin, pi
+import turtle
 
-
-print(fib(10))
-
-e = input()
-print(e, "=", eval(e))
+n = int(550)
+d = float(100)
+t = turtle.Pen()
+t.pensize(2)
+for _ in range(n):
+    t.forward(d * sin(pi / n))
+    t.left(360 / n)
+t.hideturtle()
+turtle.exitonclick()
