@@ -91,7 +91,7 @@ def Date(t):
     y = t.year
     m = t.month
     d = t.day
-    return "%s %d%d" % (y, m, d)
+    return "%s年%d月%d日" % (y, m, d)
 
 
 def Tick():
